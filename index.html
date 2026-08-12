@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Cine Search</title>
 </head>
 <body>
@@ -17,13 +17,34 @@
         <p>Pesquise entre milhares de títulos e encontre informações, avaliações e muito mais.</p>
     </header>
     <main>
-        <form>
+    <section class="search-section">
+        <form id="search-form">
             <div class="search-container">
                 <input type="text" id="movie-search" placeholder="Pesquise um filme..." />
                 <button type="submit">Buscar</button>
             </div>
         </form>
-    <section id="results"></section>
+    </section>
+    <section id="results">
+    <div class="movie-card">
+    <img
+        src="https://image.tmdb.org/t/p/w500/gKkl37BQuKTanygYQG1pyYgLVgf.jpg"
+        alt="Interestelar">
+
+    <div class="movie-info">
+        <h2>Interestelar</h2>
+        <p class="rating">⭐ 8.7</p>
+        <p class="year">2014</p>
+        <p class="overview">
+            As reservas naturais da Terra estão chegando ao fim. Um grupo de exploradores parte em uma missão para encontrar um novo lar para a humanidade.
+        </p>
+
+        <button class="favorite-btn">
+            ❤️ Favoritar
+        </button>
+    </div>
+</div>
+    </section>
     </main>
 </body>
 </html>

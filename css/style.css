@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+/* ==============================
+   RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   VARIÁVEIS
+============================== */
+
+:root {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+
+    --background-color: #1c1e5a;
+    --cards: #3a2f8f;
+    --primary-color: #9d67c9;
+    --destaque-color: #a8298f;
+    --botao: #8f39a4;
+
+    --texto-principal: #ffffff;
+    --texto-secundario: #c9b2e5;
+}
+
+
+/* ==============================
+   BODY
+============================== */
+
+body {
+    min-height: 100vh;
+
+    background-color: var(--background-color);
+    color: var(--texto-principal);
+
+    font-family: "Poppins", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+
+    color: var(--texto-principal);
+
+    margin-bottom: 0.8rem;
+}
+
+header p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+    line-height: 1.6;
+
+    padding: 2px 0;
+
+    color: var(--texto-secundario);
+}
+
+
+/* ==============================
+   MAIN
+============================== */
+
+main {
+    width: 100%;
+}
+
+
+/* ==============================
+   PESQUISA
+============================== */
+
+.search-section {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto 2rem;
+}
+
+.search-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+
+/* ==============================
+   INPUT
+============================== */
+
+.search-container input {
+    flex: 1;
+
+    padding: 1rem 1.5rem;
+
+    border: none;
+    border-radius: 50px;
+
+    background-color: var(--cards);
+    color: var(--texto-principal);
+
+    outline: none;
+
+    font-size: 1rem;
+
+    transition: 0.3s;
+}
+
+.search-container input::placeholder {
+    color: var(--texto-secundario);
+}
+
+.search-container input:focus {
+    box-shadow: 0 0 15px rgba(157, 103, 201, 0.4);
+}
+
+
+/* ==============================
+   BOTÃO DE PESQUISA
+============================== */
+
+.search-container button {
+    padding: 0.9rem 1.4rem;
+
+    border: 2px solid transparent;
+    border-radius: 50px;
+
+    background: var(--destaque-color);
+    color: var(--texto-principal);
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: transparent;
+    border-color: var(--primary-color);
+}
+
+
+/* ==============================
+   RESULTADOS
+============================== */
+
+#results {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+
+    gap: 2rem;
+}
+
+
+/* ==============================
+   CARD DO FILME
+============================== */
+
+.movie-card {
+    background-color: var(--cards);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==============================
+   POSTER
+============================== */
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ==============================
+   INFORMAÇÕES DO FILME
+============================== */
+
+.movie-info {
+    padding: 1.5rem;
+}
+
+.movie-info h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--texto-principal);
+}
+
+
+/* ==============================
+   NOTA
+============================== */
+
+.rating {
+    color: #ffd700;
+
+    font-weight: 600;
+
+    margin-bottom: 0.3rem;
+}
+
+
+/* ==============================
+   ANO
+============================== */
+
+.year {
+    color: var(--texto-secundario);
+
+    margin-bottom: 1rem;
+}
+
+
+/* ==============================
+   SINOPSE
+============================== */
+
+.overview {
+    color: var(--texto-secundario);
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* ==============================
+   BOTÃO FAVORITO
+============================== */
+
+.favorite-btn {
+    width: 100%;
+
+    padding: 0.8rem 1rem;
+
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: var(--texto-principal);
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.favorite-btn:hover {
+    background-color: var(--primary-color);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 1.5rem;
+    }
+
+    header {
+        margin-bottom: 2rem;
+    }
+
+    header h1 {
+        font-size: 2.3rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
+    #results {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card img {
+        height: 400px;
+    }
+}
