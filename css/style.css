@@ -198,7 +198,7 @@ form {
 
 
 /* ==============================
-   CARD DO FILME
+   POSTER
 ============================== */
 
 .movie-card {
@@ -208,48 +208,64 @@ form {
 
     overflow: hidden;
 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
     transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .movie-card:hover {
     transform: translateY(-5px);
 
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
-
-
-/* ==============================
-   POSTER
-============================== */
-
 .movie-card img {
+    display: block;
+
     width: 100%;
     height: 350px;
 
     object-fit: cover;
-
-    display: block;
 }
+.no-image {
+    width: 100%;
+    height: 350px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    background-color: var(--background-color);
+    color: var(--texto-secundario);
+
+    font-size: 1rem;
+    text-align: center;
+}
 /* ==============================
    INFORMAÇÕES DO FILME
 ============================== */
 
 .movie-info {
-    padding: 1.5rem;
+    padding: 1.2rem;
 }
 
 .movie-info h2 {
     font-size: 1.3rem;
-    font-weight: 600;
-
-    margin-bottom: 0.5rem;
-
+    margin-bottom: 0.6rem;
+}
+.rating {
     color: var(--texto-principal);
+    font-weight: 600;
+}
+.year {
+    color: var(--texto-secundario);
+    margin-bottom: 0.8rem;
+}
+.overview {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 
@@ -327,7 +343,6 @@ form {
 /* ==============================
    RESPONSIVIDADE
 ============================== */
-
 @media (max-width: 600px) {
 
     body {
@@ -362,7 +377,8 @@ form {
         grid-template-columns: 1fr;
     }
 
-    .movie-card img {
+    .movie-card img,
+    .no-image {
         height: 400px;
     }
 }
