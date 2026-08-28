@@ -15,16 +15,10 @@ async function buscarFilme(event) { // Função para buscar filmes
     }
 
     const query = encodeURIComponent(input.value);  // Codifica a pesquisa para ser usada na URL
-    const url = `https://api.themoviedb.org/3/search/movie?query=${query}`; // URL da API para buscar filmes
-    try{ // Bloco try-catch para tratar erros na requisição
-        const options = {  // Opções da requisição
-            method: 'GET', // Método da requisição
-            headers: { // Cabeçalhos da requisição
-            accept: 'application/json', // Aceita resposta em JSON
-            Authorization: 'Bearer ' 
-            }
-        };
-        const response = await fetch(url, options); // Faz a requisição para a API
+    const url = `/api/search?query=${query}`;
+
+    try {
+    const response = await fetch(url);
         const data = await response.json(); // Converte a resposta em JSON
         resultsContainer.innerHTML = ""; // Limpa os resultados anteriores
         const imageBaseUrl = "https://image.tmdb.org/t/p/w500"; // URL base para as imagens dos filmes
