@@ -10,40 +10,33 @@
     <title>Cine Search</title>
 </head>
 <body>
+    
     <header>
-        <h1>Cine Search</h1>
-        <p>Bem-vindo ao Cine Search!</p>
-        <p>Descubra seu próximo filme favorito.</p>
-        <p>Pesquise entre milhares de títulos e encontre informações, avaliações e muito mais.</p>
+        <nav class="navbar">
+            <div class="logo">Cine Search</div>
+                <ul class="nav-links">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+        </nav>
+        <p class="hero-subtitle">DESCUBRA • PESQUISE • ASSISTA</p>
+        <h1>Descubra seu próximo filme favorito.</h1>
+        <p class="hero-description">
+            Explore milhares de filmes, descubra novas histórias
+            e encontre algo perfeito para assistir.
+        </p>
     </header>
     <main>
     <section class="search-section">
         <form id="search-form">
             <div class="search-container">
-                <input type="text" id="movie-search" placeholder="Pesquise um filme..." />
+                <input type="text" id="movie-search" placeholder="Pesquise um filme..."/>
                 <button type="submit">Buscar</button>
             </div>
         </form>
     </section>
     <section id="results">
-    <div class="movie-card">
-    <img
-        src="https://image.tmdb.org/t/p/w500/gKkl37BQuKTanygYQG1pyYgLVgf.jpg"
-        alt="Interestelar">
-
-    <div class="movie-info">
-        <h2>Interestelar</h2>
-        <p class="rating">⭐ 8.7</p>
-        <p class="year">2014</p>
-        <p class="overview">
-            As reservas naturais da Terra estão chegando ao fim. Um grupo de exploradores parte em uma missão para encontrar um novo lar para a humanidade.
-        </p>
-
-        <button class="favorite-btn">
-            ❤️ Favoritar
-        </button>
-    </div>
-</div>
     </section>
     </main>
     <script src="js/script.js"></script>
