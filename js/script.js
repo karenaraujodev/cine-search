@@ -49,14 +49,14 @@ async function buscarFilme(event) { // Função para buscar filmes
 
         <div class="movie-info">
 
+        <div class="movie-header">
             <h2>${filme.title}</h2>
-
+            <button class="favorite-button" type="button">
+            ☆</button>
+        </div>
             <p class="rating">⭐ ${filme.vote_average.toFixed(1)}</p>
-
             <p class="year">📅 ${year}</p>
-
             <p class="overview">${overview}</p>
-
         </div>
     `;
 
