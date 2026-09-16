@@ -25,7 +25,6 @@
     --primary-color: #9d67c9;
     --destaque-color: #a8298f;
     --botao: #8f39a4;
-
     --texto-principal: #ffffff;
     --texto-secundario: #c9b2e5;
 }
@@ -66,11 +65,13 @@ body {
     margin-bottom: 5rem;
 }
 
+
 .logo {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--texto-principal);
 }
+
 
 .nav-links {
     display: flex;
@@ -78,6 +79,7 @@ body {
 
     list-style: none;
 }
+
 
 .nav-links a {
     color: var(--texto-secundario);
@@ -90,7 +92,15 @@ body {
     transition: 0.3s;
 }
 
+
 .nav-links a:hover {
+    color: var(--texto-principal);
+}
+
+
+/* Página atual */
+
+.nav-links a.active {
     color: var(--texto-principal);
 }
 
@@ -108,6 +118,7 @@ header {
     margin-bottom: 2rem;
 }
 
+
 .hero-subtitle {
     color: var(--primary-color);
 
@@ -118,6 +129,7 @@ header {
 
     margin-bottom: 1.2rem;
 }
+
 
 header h1 {
     max-width: 800px;
@@ -130,6 +142,7 @@ header h1 {
     line-height: 1.15;
     font-weight: 700;
 }
+
 
 .hero-description {
     max-width: 650px;
@@ -163,12 +176,15 @@ main {
     margin: 0 auto 4rem;
 }
 
+
 form {
     width: 100%;
 }
 
+
 .search-container {
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -186,9 +202,11 @@ form {
     padding: 1.1rem 1.5rem;
 
     border: 1px solid rgba(255, 255, 255, 0.1);
+
     border-radius: 50px;
 
     background-color: var(--cards);
+
     color: var(--texto-principal);
 
     outline: none;
@@ -199,9 +217,11 @@ form {
     transition: 0.3s;
 }
 
+
 .search-container input::placeholder {
     color: var(--texto-secundario);
 }
+
 
 .search-container input:focus {
     box-shadow: 0 0 15px rgba(157, 103, 201, 0.4);
@@ -216,9 +236,11 @@ form {
     padding: 1rem 1.8rem;
 
     border: 2px solid var(--destaque-color);
+
     border-radius: 50px;
 
     background-color: var(--destaque-color);
+
     color: var(--texto-principal);
 
     font-family: inherit;
@@ -230,6 +252,7 @@ form {
     transition: 0.3s;
 }
 
+
 .search-container button:hover {
     background-color: transparent;
 
@@ -240,10 +263,11 @@ form {
 
 
 /* ==============================
-   RESULTADOS
+   RESULTADOS + FAVORITOS
 ============================== */
 
-#results {
+#results,
+#favorites-container {
     width: 100%;
     max-width: 1200px;
 
@@ -257,6 +281,47 @@ form {
     );
 
     gap: 2rem;
+}
+
+
+/* ==============================
+   SEÇÃO DE FAVORITOS
+============================== */
+
+.favorites-section {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto 3rem;
+
+    text-align: center;
+}
+
+
+.favorites-section h2 {
+    color: var(--texto-principal);
+
+    font-size: 2rem;
+
+    margin-bottom: 0.5rem;
+}
+
+
+/* ==============================
+   MENSAGEM DE FAVORITOS VAZIOS
+============================== */
+
+#empty-message {
+    width: 100%;
+
+    margin: 3rem auto;
+
+    text-align: center;
+
+    color: var(--texto-secundario);
+
+    font-size: 1rem;
 }
 
 
@@ -278,6 +343,7 @@ form {
         box-shadow 0.3s ease;
 }
 
+
 .movie-card:hover {
     transform: translateY(-5px);
 
@@ -298,15 +364,18 @@ form {
     object-fit: cover;
 }
 
+
 .no-image {
     width: 100%;
     height: 350px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     background-color: var(--background-color);
+
     color: var(--texto-secundario);
 
     font-size: 1rem;
@@ -338,6 +407,7 @@ form {
 
     margin-bottom: 0.6rem;
 }
+
 
 .movie-info h2 {
     font-size: 1.3rem;
@@ -378,6 +448,7 @@ form {
     color: var(--texto-secundario);
 
     font-size: 0.9rem;
+
     line-height: 1.6;
 
     margin-bottom: 1.5rem;
@@ -402,6 +473,7 @@ form {
     transition: 0.3s;
 }
 
+
 .favorite-button:hover {
     color: var(--destaque-color);
 
@@ -419,44 +491,61 @@ form {
         padding: 1.5rem;
     }
 
+
     .navbar {
         margin-bottom: 3rem;
     }
+
 
     .nav-links {
         gap: 1rem;
     }
 
+
     header {
         margin-bottom: 2rem;
     }
+
 
     header h1 {
         font-size: 2.3rem;
     }
 
+
     .hero-description {
         font-size: 0.95rem;
     }
+
 
     .search-container {
         flex-direction: column;
     }
 
+
     .search-container input {
         width: 100%;
     }
+
 
     .search-container button {
         width: 100%;
     }
 
-    #results {
+
+    #results,
+    #favorites-container {
         grid-template-columns: 1fr;
     }
+
 
     .movie-card img,
     .no-image {
         height: 400px;
     }
+
+
+    .favorites-section h2 {
+        font-size: 1.6rem;
+    }
+
 }
