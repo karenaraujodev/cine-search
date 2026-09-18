@@ -3,6 +3,12 @@ const favoritesContainer = document.querySelector("#favorites-container");
 
 // Pega os favoritos salvos
 const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+const emptyMessage = document.querySelector("#empty-message");
+if (favoritos.length === 0) {
+    emptyMessage.style.display = "block";
+} else {
+    emptyMessage.style.display = "none";
+}
 const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 // Percorre cada filme
 favoritos.forEach((filme) => {
