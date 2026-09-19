@@ -32,12 +32,32 @@ favoritos.forEach((filme) => {
         : "Sinopse não disponível.";
 
     movieCard.innerHTML = `
-        ${
-            poster
-                ? `<img src="${poster}" alt="${filme.title}">`
-                : `<div class="no-image">Imagem não disponível</div>`
-        }
-    `;
+    ${
+        poster
+            ? `<img src="${poster}" alt="${filme.title}">`
+            : `<div class="no-image">Imagem não disponível</div>`
+    }
+
+    <div class="movie-info">
+
+        <div class="movie-header">
+            <h2>${filme.title}</h2>
+        </div>
+
+        <p class="rating">
+            ⭐ ${filme.vote_average.toFixed(1)}
+        </p>
+
+        <p class="year">
+            📅 ${year}
+        </p>
+
+        <p class="overview">
+            ${overview}
+        </p>
+
+    </div>
+`;
 
     favoritesContainer.appendChild(movieCard);
 });
