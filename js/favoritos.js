@@ -63,5 +63,24 @@ favoritos.forEach((filme) => {
     </div>
 `;
 
-    favoritesContainer.appendChild(movieCard);
+    removeButton.addEventListener("click", () => {
+
+    const indice = favoritos.findIndex(
+        (favorito) => favorito.id === filme.id
+    );
+
+    favoritos.splice(indice, 1);
+
+    localStorage.setItem(
+        "favoritos",
+        JSON.stringify(favoritos)
+    );
+
+    movieCard.remove();
+
+    if (favoritos.length === 0) {
+        emptyMessage.style.display = "block";
+    }
+
+});
 });
