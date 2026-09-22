@@ -62,7 +62,7 @@ favoritos.forEach((filme) => {
 
     </div>
 `;
-
+    const removeButton = movieCard.querySelector(".remove-favorite");
     removeButton.addEventListener("click", () => {
 
     const indice = favoritos.findIndex(
