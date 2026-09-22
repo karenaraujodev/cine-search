@@ -53,8 +53,12 @@ favoritos.forEach((filme) => {
         </p>
 
         <p class="overview">
-            ${overview}
+        ${overview}
         </p>
+
+    <button class="remove-favorite" type="button">
+        Remover dos favoritos
+    </button>
 
     </div>
 `;
