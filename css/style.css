@@ -65,13 +65,11 @@ body {
     margin-bottom: 5rem;
 }
 
-
 .logo {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--texto-principal);
 }
-
 
 .nav-links {
     display: flex;
@@ -79,7 +77,6 @@ body {
 
     list-style: none;
 }
-
 
 .nav-links a {
     color: var(--texto-secundario);
@@ -91,7 +88,6 @@ body {
 
     transition: 0.3s;
 }
-
 
 .nav-links a:hover {
     color: var(--texto-principal);
@@ -118,7 +114,6 @@ header {
     margin-bottom: 2rem;
 }
 
-
 .hero-subtitle {
     color: var(--primary-color);
 
@@ -129,7 +124,6 @@ header {
 
     margin-bottom: 1.2rem;
 }
-
 
 header h1 {
     max-width: 800px;
@@ -142,7 +136,6 @@ header h1 {
     line-height: 1.15;
     font-weight: 700;
 }
-
 
 .hero-description {
     max-width: 650px;
@@ -176,11 +169,9 @@ main {
     margin: 0 auto 4rem;
 }
 
-
 form {
     width: 100%;
 }
-
 
 .search-container {
     display: flex;
@@ -202,11 +193,9 @@ form {
     padding: 1.1rem 1.5rem;
 
     border: 1px solid rgba(255, 255, 255, 0.1);
-
     border-radius: 50px;
 
     background-color: var(--cards);
-
     color: var(--texto-principal);
 
     outline: none;
@@ -217,11 +206,9 @@ form {
     transition: 0.3s;
 }
 
-
 .search-container input::placeholder {
     color: var(--texto-secundario);
 }
-
 
 .search-container input:focus {
     box-shadow: 0 0 15px rgba(157, 103, 201, 0.4);
@@ -236,11 +223,9 @@ form {
     padding: 1rem 1.8rem;
 
     border: 2px solid var(--destaque-color);
-
     border-radius: 50px;
 
     background-color: var(--destaque-color);
-
     color: var(--texto-principal);
 
     font-family: inherit;
@@ -252,7 +237,6 @@ form {
     transition: 0.3s;
 }
 
-
 .search-container button:hover {
     background-color: transparent;
 
@@ -263,11 +247,10 @@ form {
 
 
 /* ==============================
-   RESULTADOS + FAVORITOS
+   RESULTADOS DA PESQUISA
 ============================== */
 
-#results,
-#favorites-container {
+#results {
     width: 100%;
     max-width: 1200px;
 
@@ -285,19 +268,40 @@ form {
 
 
 /* ==============================
+   FILMES FAVORITOS
+============================== */
+
+#favorites-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        280px
+    );
+
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+
+/* ==============================
    SEÇÃO DE FAVORITOS
 ============================== */
 
 .favorites-section {
     width: 100%;
-
     max-width: 1200px;
 
     margin: 0 auto 3rem;
 
     text-align: center;
 }
-
 
 .favorites-section h2 {
     color: var(--texto-principal);
@@ -341,8 +345,9 @@ form {
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
-}
 
+    height: 100%;
+}
 
 .movie-card:hover {
     transform: translateY(-5px);
@@ -357,12 +362,14 @@ form {
 
 .movie-card img {
     display: block;
+
     width: 100%;
     height: auto;
+
     aspect-ratio: 2 / 3;
+
     object-fit: cover;
 }
-
 
 .no-image {
     width: 100%;
@@ -406,7 +413,6 @@ form {
 
     margin-bottom: 0.6rem;
 }
-
 
 .movie-info h2 {
     font-size: 1.3rem;
@@ -472,11 +478,42 @@ form {
     transition: 0.3s;
 }
 
-
 .favorite-button:hover {
     color: var(--destaque-color);
 
     transform: scale(1.15);
+}
+
+
+/* ==============================
+   BOTÃO REMOVER FAVORITO
+============================== */
+
+.remove-favorite {
+    width: 100%;
+
+    padding: 0.7rem 1rem;
+
+    border: 1px solid var(--destaque-color);
+    border-radius: 10px;
+
+    background-color: transparent;
+
+    color: var(--texto-principal);
+
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.remove-favorite:hover {
+    background-color: var(--destaque-color);
+
+    transform: translateY(-2px);
 }
 
 
@@ -490,56 +527,50 @@ form {
         padding: 1.5rem;
     }
 
-
     .navbar {
         margin-bottom: 3rem;
     }
-
 
     .nav-links {
         gap: 1rem;
     }
 
-
     header {
         margin-bottom: 2rem;
     }
-
 
     header h1 {
         font-size: 2.3rem;
     }
 
-
     .hero-description {
         font-size: 0.95rem;
     }
-
 
     .search-container {
         flex-direction: column;
     }
 
-
     .search-container input {
         width: 100%;
     }
-
 
     .search-container button {
         width: 100%;
     }
 
-
-    #results,
-    #favorites-container {
+    #results {
         grid-template-columns: 1fr;
     }
 
+    #favorites-container {
+        grid-template-columns: minmax(0, 280px);
+    }
 
-    .movie-card img{
+    .movie-card img {
         height: auto;
     }
+
     .no-image {
         height: 400px;
     }
@@ -547,5 +578,4 @@ form {
     .favorites-section h2 {
         font-size: 1.6rem;
     }
-
 }
